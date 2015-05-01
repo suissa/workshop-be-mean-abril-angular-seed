@@ -1,0 +1,15 @@
+<h2>WOrkshop Be MEAN - {{ name }}</h2>
+<table>
+  <thead>
+    <tr>
+      <th data-ng-click='ordenar("name")'>Nome</th>
+      <th data-ng-click='ordenar("price")'>Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat='beer in beers | orderBy:predicate:reverse'>
+      <td>{{ beer.name }}</td>
+      <td>{{ beer.price }}</td>
+    </tr>
+  </tbody>
+</table>
