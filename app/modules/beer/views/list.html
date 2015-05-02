@@ -1,15 +1,22 @@
 <h2>{{ title }}</h2>
+<h3>{{ msg }}</h3>
 <table>
   <thead>
     <tr>
       <th data-ng-click='ordenar("name")'>Nome</th>
       <th data-ng-click='ordenar("price")'>Preço</th>
+      <th>Remover</th>
     </tr>
   </thead>
   <tbody>
     <tr data-ng-repeat='beer in beers | orderBy:predicate:reverse'>
-      <td>{{ beer.name }}</td>
+      <td>
+        <a href="#/beers/{{beer._id}}">{{ beer.name }}</a>
+      </td>
       <td>{{ beer.price }}</td>
+      <td>
+        <button data-ng-click='remove(beer)'>Remover</button>
+      </td>
     </tr>
   </tbody>
 </table>
